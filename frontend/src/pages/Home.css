@@ -1,0 +1,56 @@
+.signup-button {
+  width: 130px;
+  height: 50px;
+  background-color: #8beaff;
+  border-radius: 45px;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  margin-bottom: 30px;
+}
+
+.signup-button:hover {
+  background-color: #7adce4;
+}
+
+.google-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 55px;
+  background-color: #040A2A;
+  border: 1px solid #ccc;
+  border-radius: 45px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.google-button:hover {
+  background-color: #091768;
+}
+
+.google-icon {
+  width: 24px;
+  height: 24px;
+  background-color: #040A2A; /* Placeholder for the Google icon */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.google-text {
+  color: #FFFFFF;
+
+}
+
+.login-text {
+  color: #000000;
+  font-size: 20px;
+  font-weight: bold;
+}
