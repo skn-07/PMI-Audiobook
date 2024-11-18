@@ -25,7 +25,7 @@ const Login = () => {
         <div className="links">
           <a href="/forgot-password" className="link">Forgot password?</a>
           <div className="link-container">
-            <a href="/back" className="link">Back</a>
+            <a href="/" className="link">Back</a>
           </div>
         </div>
       </div>
