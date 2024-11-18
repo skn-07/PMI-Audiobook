@@ -5,6 +5,7 @@ import googleLogo from "../asset/googleLogo.png";
 import "./Home.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -26,7 +27,7 @@ const Home = () => {
         
         {/* Sign Up Button */}
         <button className="signup-button mb-4">
-          Sign up
+          <Link to="/signup1">Sign up</Link>
         </button>
         
         {/* Google Button */}
@@ -37,7 +38,7 @@ const Home = () => {
         
         {/* Log in Text */}
         <p className="login-text cursor-pointer hover:underline">
-          Log in
+        <Link to="/login">Log in</Link>
         </p>
       </div>
       
