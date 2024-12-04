@@ -45,9 +45,9 @@ const DeviceSettings = () => {
   return (
     <div className=" ">
   
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:w-[123vh] gap-6 md:gap-10 md:grid-cols-3">
+      <div className="grid  sm:grid-cols-2 md:w-[123vh] gap-6 md:gap-10 md:grid-cols-3">
         {settings.map(({ label, description, isEnabled, toggle, icon }, index) => (
-          <div key={index} className="bg-gray-900 p-4 rounded-[35px]   transition-colors duration-300  hover:shadow-[0_4px_12px_rgba(255,255,255,0.5)] " >
+          <div key={index} className="bg-gray-900 p-4 rounded-[35px]   transition-colors duration-300  shadow-[0_1px_7px_rgba(225,225,235,0.4)] " >
             <div className="flex justify-center items-center mb-4">
               <div className={`w-12 h-12 flex justify-center items-center rounded-full ${isEnabled ? 'bg-green-500' : 'bg-gray-500'}`}>
                 {icon}
@@ -57,7 +57,7 @@ const DeviceSettings = () => {
             <p className="text-sm text-gray-300 text-center mb-4">{description}</p>
             <div
               onClick={toggle}
-              className={`w-12 h-6 flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300 ml-24 ${
+              className={`w-12 h-6 flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300 ml-[108px]  md:ml-[14vh]   ${
                 isEnabled ? 'bg-green-500' : 'bg-gray-400'
               }`}
             >
