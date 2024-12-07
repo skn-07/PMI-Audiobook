@@ -1,34 +1,34 @@
 import React from 'react';
 import AudioSettings from './Audio';
-import  Language from './Languages'
+import Language from './Languages'
 import Devices from './Devices';
+import AboutUs from './Aboutus';
+import Storage from './Storage';
+import Other from './other';
 
 const SettingsContent = ({ selectedOption }) => {
   const renderContent = () => {
     switch (selectedOption) {
-      case 'Devices':
-        return <Devices/>;
-      case 'Storage':
-        return <p>Configure your Storage settings here.</p>;
       case 'Audio Settings':
-        return <AudioSettings/>;
+        return <AudioSettings />;
+      case 'Devices':
+        return <Devices />;
+      case 'Storage':
+        return <Storage />;
       case 'Languages':
-        return <Language/>
+        return <Language />;
       case 'About Us':
-        return <p>Learn more about us here.</p>;
+        return <AboutUs />;
       case 'Other':
-        return <p>Other settings.</p>;
-      case 'Logout':
-        return <p>You have been logged out.</p>;
+        return <Other />;
       default:
-        return <p>Welcome to the settings page!</p>;
+        return <AudioSettings />;
     }
   };
 
   return (
-    <div className="  flex-1 p-8 ">
-      <h2 className="text-2xl sm:text-3xl font-semibold mb-4">{selectedOption}</h2>
-      <div className="text-lg">{renderContent()}</div>
+    <div className="flex-1 overflow-y-auto">
+      {renderContent()}
     </div>
   );
 };

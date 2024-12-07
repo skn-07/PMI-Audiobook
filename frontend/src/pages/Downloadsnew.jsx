@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { FaInstagram, FaTwitter } from 'react-icons/fa';
 import logo from "../asset/image.png";
@@ -60,28 +59,45 @@ const LibraryPage = () => {
   // Slick settings
   const settings = {
     dots: true,
-    infinite: false,   // Turn off infinite for now to make testing smoother
-    speed: 500,        // Speed of the slide transition
-    slidesToShow: 5,   // Number of slides to show
-    slidesToScroll: 1, // Number of slides to scroll per action
-    swipeToSlide: true, // Allow swiping
+    infinite: true,   // Enable infinite scrolling
+    speed: 300,       // Faster transition speed
+    slidesToShow: 5,  // Number of slides to show
+    slidesToScroll: 1,
+    swipeToSlide: true,
+    draggable: true,  // Enable dragging
+    cssEase: "ease-out", // Smooth easing function
+    touchThreshold: 10,  // Make swipe more sensitive
+    useCSS: true,
+    useTransform: true,
+    arrows: true,     // Show navigation arrows
+    autoplay: false,  // Disable autoplay
+    pauseOnHover: true,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
         }
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
         }
       },
       {
         breakpoint: 640,
         settings: {
           slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
         }
       }
     ]
