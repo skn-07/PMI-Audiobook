@@ -1,51 +1,91 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from 'react-router-dom';
-import styles from './Signup1.module.css'; 
+import styles from './Signup1.module.css';
 
 const SignUpForm = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    mobile: '',
+    email: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
   return (
     <div className={styles.signupPage}>
       {/* Top blue bar */}
       <div className={`${styles.blueBox} ${styles.top}`}></div>
-      
+
       <div className={styles.container}>
-        {/* <a href="#" className={styles.backLink1}>BACK</a> */}
-        <div className={styles.signupForm}>
-          {/* Form header */}
-          <h2>Sign Up</h2>
-          <p>Please fill your information below</p>
+        <div className={styles.formWrapper}>
+          <div className={styles.formHeader}>
+            <h2>Create Account</h2>
+            <p>Join our community of audiobook lovers</p>
+          </div>
           
-          <form>
-            {/* Name input */}
-            <div className={`${styles.inputGroup} ${styles.nameGroup}`}>
-              <label htmlFor="name">Name</label>
-              <input type="text" id="name" placeholder="abc" />
+          <form className={styles.signupForm}>
+            <div className={styles.inputGroup}>
+              <input 
+                type="text" 
+                id="name" 
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder=" "
+                required 
+              />
+              <label htmlFor="name">Full Name</label>
+              <div className={styles.inputLine}></div>
             </div>
 
-            {/* Mobile number input */}
-            <div className={`${styles.inputGroup} ${styles.mobileGroup}`}>
-              <label htmlFor="mobile">Mobile number</label>
-              <input type="text" id="mobile" placeholder="(91) 8767564357" />
+            <div className={styles.inputGroup}>
+              <input 
+                type="tel" 
+                id="mobile" 
+                name="mobile"
+                value={formData.mobile}
+                onChange={handleChange}
+                placeholder=" "
+                required 
+              />
+              <label htmlFor="mobile">Mobile Number</label>
+              <div className={styles.inputLine}></div>
             </div>
 
-            {/* Email input */}
-            <div className={`${styles.inputGroup} ${styles.emailGroup}`}>
-              <label htmlFor="email">Email</label>
-              <input type="email" id="email" placeholder="abc@gmail.com" />
+            <div className={styles.inputGroup}>
+              <input 
+                type="email" 
+                id="email" 
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder=" "
+                required 
+              />
+              <label htmlFor="email">Email Address</label>
+              <div className={styles.inputLine}></div>
             </div>
 
-            {/* Action buttons and links */}
             <div className={styles.actions}>
-              <a href="/login" className={styles.loginLink}>Already have an account? Login</a>
               <Link to="/signup2" className={styles.nextButton}>
-                Next  &gt;
+                Continue
+                <span className={styles.buttonIcon}>→</span>
               </Link>
             </div>
 
-            {/* Flexible back link */}
-            <Link to="/" className={styles.backLink2}>
-                BACK
+            <div className={styles.bottomLinks}>
+              <Link to="/login" className={styles.loginLink}>
+                Already have an account? <span>Login</span>
               </Link>
+              <Link to="/" className={styles.backLink}>
+                Back to Home
+              </Link>
+            </div>
           </form>
         </div>
       </div>
